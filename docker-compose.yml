@@ -9,7 +9,7 @@ services:
     ports:
       # We'll bind our host's port 5432 to postgres's port 5432, so we can use
       # our database IDEs with it:
-      - 8888:8888
+      - 8877:8888
     volumes:
        - C:\Users\p10258338\Documents\python\pytorch\mydata:/home/jovyan/work:rw
     command: start-notebook.sh --NotebookApp.token=''
