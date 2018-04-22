@@ -1,17 +1,14 @@
-version: '2.1'
+version: '3.6'
 services:
-  # Our PostgreSQL service:
-  # docker run -it  postgres:9.6.2 psql -h 192.168.99.100 -U postgre
   pytorch-notebook:
     build:
       context: .
       dockerfile: Dockerfile
     ports:
-      # We'll bind our host's port 5432 to postgres's port 5432, so we can use
-      # our database IDEs with it:
       - 8877:8888
     volumes:
-       - C:\Users\p10258338\Documents\python\pytorch\mydata:/home/jovyan/work:rw
+      - ./mydata:/home/jovyan/work:rw
+      #  - C:\Users\p10258338\Documents\python\pytorch\mydata:/home/jovyan/work:rw
     command: start-notebook.sh --NotebookApp.token=''
     restart: always
   
